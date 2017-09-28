@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+</head>
+<body>
+<div id="app1">
+    <h1>{{message}}</h1>
+    <!--必须放在vm对应html节点下面,html中绑定监听器方法-->
+    <button v-on:click="say"> vue say</button>
+    <!--    等价形式：  v-on:   ===   @      -->
+    <button @click="say">vue say</button>
+</div>
+<!--放在任意位置-->
+<button id="bt"> js say</button>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app1',
+        data: {
+            message: 'hello,robin'
+        },
+        methods : {
+            //直接将监听器函数放在methods属性内
+            say : function () {
+                alert('vue say');
+            }
+        }
+    });
+    //选择器获取dom元素，js中再绑定监听器方法
+    $('#bt').on('click',function () {
+        alert('js say')
+    })
+</script>
+</body>
+</html>
+

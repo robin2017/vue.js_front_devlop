@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app1">
+    <h1>{{message}}</h1>
+</div>
+<script type="text/javascript">
+
+    var vm = new Vue({
+        el: '#app1',
+        data: {
+            message: 'hello',
+            cents: 200
+        },
+        computed: {
+            price: {
+                //从 price  转化到  cents
+                set: function (newValue) {
+                    //默认：this.price = newValue;
+                    this.cents = newValue * 100;
+                },
+                //从 cents  转化到 price
+                get: function () {
+                    return (this.cents / 100).toFixed(2);
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

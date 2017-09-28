@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app1">
+    <message content="hello world"></message>
+</div>
+<script type="text/javascript">
+    var Message = Vue.extend({
+        props: ['content'],
+        template:  '<h1>{{content}}</h1>'
+    });
+    Vue.component('message',Message);
+    var vm = new Vue({
+        el: '#app1'
+    })
+</script>
+</body>
+</html>

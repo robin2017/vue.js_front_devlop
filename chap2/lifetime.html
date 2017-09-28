@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app1">
+    <h1>hello</h1>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app1',
+        init: function () {
+            console.log('robin-init')
+        },
+        created: function () {
+            console.log('robin-created')
+        },
+        beforeCompile: function () {
+            console.log('robin-beforeCompile')
+        },
+        compiled:function () {
+            console.log('robin-compiled')
+        },
+        attached:function () {
+            console.log('robin-attached')
+        },
+        dettached:function () {
+            console.log('robin-dettached')
+        },
+        beforeDesctory:function () {
+            console.log('robin-beforeDesctory')
+        },
+        destoryed:function () {
+            console.log('robin-destoryed')
+        },
+        ready:function () {
+            console.log('robin-ready')
+            this.$destory();
+        }
+    })
+</script>
+</body>
+</html>

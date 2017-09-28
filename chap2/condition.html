@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app1">
+    <h1>{{message}}</h1>
+
+    <div v-if="yes">
+        <p>see me if</p>
+    </div>
+
+    <!--div变成template-->
+    <template v-if="yes">
+        <p>see me if</p>
+        <p>see me if</p>
+        <p>see me if</p>
+    </template>
+
+    <!--<div v-show="yes">see me show</div>-->
+    <ul>
+
+        <li v-for="item in items">
+            <p>{{item.name}}</p>
+        </li>
+
+       <!--li变成template,v-for没必要用template-->
+        <template v-for="item in items">
+            <p>{{item.name}}</p>
+        </template>
+
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#app1',
+        data: {
+            message: 'hello,robin',
+            ye:'nothing',
+            items:[
+                {name:'robin'},
+                {name:'jack'},
+                {name:'peter'}
+            ]
+        }
+    })
+</script>
+</body>
+</html>

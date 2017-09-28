@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="targ">
+    <p>123</p>
+</div>
+<script id="src-tpl" type="x-template">
+    <div id="src">
+        <p>this is a tpl from script tag</p>
+    </div>
+</script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#targ',
+        template: '#src-tpl'
+    })
+</script>
+</body>
+</html>
