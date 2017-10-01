@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--  css文件放</head>标签前面  -->
+    <link rel="stylesheet" href="./css/bootstrap.css"/>
+    <link rel="stylesheet" href="./css/custom.css"/>
+</head>
+<body>
+<!--1、框架主页面-->
+<div id="app">
+    <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+            <div class="page-header">
+                <h2>Router Basic - 01</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 col-xs-offset-2">
+            <div class="list-group">
+                <!--使用指令v-link进行导航-->
+                <a class="list-group-item" v-link="{ path: '/home'}">Home</a>
+                <a class="list-group-item" v-link="{ path: '/about'}">About</a>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="panel">
+                <div class="panel-body">
+                    <!--用于渲染匹配的组件-->
+                    <router-view></router-view>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--2、内嵌子页面-->
+<template id="home">
+    <div>
+        <h1>Home</h1>
+        <p>This is home page.</p>
+    </div>
+</template>
+<!--3、内嵌子页面-->
+<template id="about">
+    <div>
+        <h1>About</h1>
+        <p>This is the tutorial about vue-router.</p>
+    </div>
+</template>
+</body>
+<!-- js文件放在</body>后面 -->
+<script src="./js/vue.js"></script>
+<script src="./js/vue-router.js"></script>
+<script src="./first.js"></script>
+</html>

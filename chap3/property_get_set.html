@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+</head>
+<body>
+hello,robin
+</body>
+<script>
+    var obj = {}; //这是一个对象字面量
+    Object.defineProperty(obj,'hello',{
+        get: function () {
+            console.log('get方法被调用了')
+        },
+        set: function (val) {
+            //在赋值之后才调用该方法
+            console.log('set方法被调用了，参数为'+val)
+        }
+    });
+    obj.hello;
+    obj.hello = 'abc';
+</script>
+</html>

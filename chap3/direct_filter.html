@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<!-- html start -->
+<div id="app">
+    <div v-robin-direct="param">robin direct</div> <!--数据关联指令-->
+    <div>{{date | date}}</div> <!--数据关联过滤器-->
+</div>
+<!-- html start -->
+<script type="text/javascript">
+    /** js start **/
+    Vue.directive('robin-direct',{ //注册指令
+       bind: function () {
+           console.log('robin===bind',arguments)
+       },
+        update: function (newValue,oldValue) {
+            console.log('robin===update',newValue,oldValue)
+        },
+        unbind: function () {
+            console.log('robin===unbind',arguments)
+        }
+    });
+    Vue.filter('date',function (value) { //注册过滤器
+        if(value instanceof Date) {
+            console.log(' value is date');
+            return value;
+        }
+        console.log('value is not date');
+        return value.toLocaleString();
+    });
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            param:'first', //指令
+            date:new Date() //过滤器
+        }
+    })
+    /** js end **/
+</script>
+</body>
+</html>

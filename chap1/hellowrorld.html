@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>robintest</title>
-    <script type="text/javascript" src="../js/vue.js"></script>
+
 </head>
 <body>
 <div id="app1">
-    <h1>{{message}}</h1>
+    <input type="text" v-model="message">  <!--  view -> model  -->
+    <h1>{{message}}</h1>  <!--   model -> view   -->
 </div>
-<script type="text/javascript">
-    var vm = new Vue({
-        el: '#app1',
-        data: {
-            message: 'hello,robin'
-        }
-    })
-</script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript" src="helloworld.js"></script>
 </body>
 </html>

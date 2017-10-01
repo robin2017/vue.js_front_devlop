@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>robintest</title>
+</head>
+<body>
+<input type="text" id="a"></br>
+<span id="b"></span>
+<script type="text/javascript">
+    var obj = {};
+    Object.defineProperty(obj, 'hello', {
+        set: function (newValue) {//3、data变化，输出变化，model ==> view
+            document.getElementById('a').value = newValue; //这个不能删
+            document.getElementById('b').innerHTML = newValue;
+        }
+    });
+    document.getElementById('a')
+            .addEventListener('keyup', function (e) {
+        obj.hello = e.target.value; //2、输入变化，data变化，view ==> model
+    })
+</script>
+</body>
+</html>
