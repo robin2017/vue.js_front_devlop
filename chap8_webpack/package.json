@@ -1,0 +1,25 @@
+{
+  "name": "robin",
+  "version": "1.0.0",
+  "description": "robin",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ddd"
+  },
+  "keywords": [
+    "ddd"
+  ],
+  "author": "robin",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2"
+  }
+}

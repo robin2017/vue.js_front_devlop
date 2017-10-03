@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+<div id="app">
+    <div class="container">
+        <simple-grid :data-list="gridData" :columns="gridColumns">
+        </simple-grid>
+    </div>
+</div>
+
+<template id="grid-template">
+    <table>
+        <thead>
+        <tr>
+            <th v-for="col in columns">
+                {{ col | capitalize}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="(index,entry) in dataList">
+            <td v-for="col in columns">
+                {{entry[col]}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</template>
+
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script>
+    Vue.component('simple-grid', {
+        template: '#grid-template',
+        props: ['dataList', 'columns']
+    })
+</script>
+<script>
+
+    var demo = new Vue({
+        el: '#app',
+        data: {
+            gridColumns: ['customerId', 'companyName', 'contactName', 'phone'],
+            gridData: [],
+            apiUrl: 'http://localhost:4000/'
+        },
+        ready: function() {
+            this.getCustomers()
+        },
+        methods: {
+            getCustomers: function() {
+                this.$http.get(this.apiUrl,)
+                        .then((response) => {
+                            console.log('robin=success='+response.data);
+                            var data = [];
+                            data[0]="23";
+                            data[1]="com.robin";
+                            data[2]="robin";
+                            data[3]="17283";
+                            this.$set('gridData', data)
+
+                        })
+                        .catch(function(response) {
+                            console.log('robin exception');
+                            console.log(response)
+                        })
+            }
+        }
+    })
+</script>
+</body>
+
+</html>
