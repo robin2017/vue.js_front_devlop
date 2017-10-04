@@ -5,11 +5,11 @@
       <el-row>
         <el-col :span="24">
           <el-menu default-active="5" class="el-menu-demo" mode="horizontal" @select="">
-            <el-menu-item index="1">高级插件</el-menu-item>
-            <el-menu-item index="2">在线商城</el-menu-item>
-            <el-menu-item index="3">客户管理</el-menu-item>
-            <el-menu-item index="4">系统设置</el-menu-item>
-            <el-menu-item index="5">活动发布</el-menu-item>
+            <el-menu-item index="1">导航模版配置</el-menu-item>
+            <el-menu-item index="2">其他模版配置</el-menu-item>
+            <!--<el-menu-item index="3">客户管理</el-menu-item>-->
+            <!--<el-menu-item index="4">系统设置</el-menu-item>-->
+            <!--<el-menu-item index="5">活动发布</el-menu-item>-->
           </el-menu>
         </el-col>
       </el-row>
@@ -18,12 +18,12 @@
 
     <main>
       <!-- 左侧导航 -->
-      <div class="main-left">
-        <el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">
-          <el-menu-item index="/activePublic" >活动发布</el-menu-item>
-          <el-menu-item index="/activeManage" >活动管理</el-menu-item>
-        </el-menu>
-      </div>
+      <!--<div class="main-left">-->
+        <!--<el-menu default-active="/activePublic" class="el-menu-vertical-demo" :router="true">-->
+          <!--<el-menu-item index="/activePublic" >活动发布</el-menu-item>-->
+          <!--<el-menu-item index="/activeManage" >活动管理</el-menu-item>-->
+        <!--</el-menu>-->
+      <!--</div>-->
 
       <!-- 右侧主内容区 -->
       <div  class="main-right" >

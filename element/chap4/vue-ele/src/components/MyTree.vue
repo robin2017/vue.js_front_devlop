@@ -14,10 +14,10 @@
       return {
         data2: [{
           id: 1,
-          label: '一级 1',
+          label: '主菜单',
           children: [{
             id: 4,
-            label: '二级 1-1',
+            label: '态势处理',
             children: [{
               id: 9,
               label: '三级 1-1-1'
@@ -28,7 +28,7 @@
           }]
         }, {
           id: 2,
-          label: '一级 2',
+          label: '情报处理',
           children: [{
             id: 5,
             label: '二级 2-1'
