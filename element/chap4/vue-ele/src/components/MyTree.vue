@@ -1,4 +1,5 @@
 <template>
+
   <el-tree
     :data="data2"
     show-checkbox
@@ -7,8 +8,11 @@
     :default-checked-keys="[5]"
     :props="defaultProps">
   </el-tree>
+  <!--<button v-on:onclick="btnTest">测试按钮</button>-->
+  <!--<button @click="btnTest">登陆</button>-->
 </template>
 <script>
+  import Soft from '../utils/software'
   export default {
     data() {
       return {
@@ -49,6 +53,14 @@
           label: 'label'
         }
       };
+    },
+    methods:{
+      btnTest :function () {
+        console.log('===btn onclick===')
+        var data = Soft.doAjax({})
+
+        console.log(' methodd:data == '+data)
+      }
     }
   };
 </script>

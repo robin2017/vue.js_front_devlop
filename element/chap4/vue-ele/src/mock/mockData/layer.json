@@ -1,0 +1,24 @@
+{
+  "layerData": [
+    {
+      "id": 1,
+      "label": "主菜单",
+      "children": [
+        {
+          "id": 4,
+          "label": "态势处理",
+          "children": [
+            {
+              "id": 9,
+              "label": "图层一"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "label": "空情处理"
+        }
+      ]
+    }
+  ]
+}
