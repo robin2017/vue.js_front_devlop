@@ -36,6 +36,16 @@
           <hello></hello>
         </div>
 
+        <div>
+          <inputel></inputel>
+        </div>
+
+
+        <div>
+          <buttonel></buttonel>
+        </div>
+
+
       </div>
 
 
@@ -50,10 +60,13 @@
   import 'element-ui/lib/theme-default/index.css'
   import Tree from './components/MyTree'
   import Hello from './components/Hello'
+  import Inputel from './components/Input'
+  import Buttonel from './components/Button'
+
   Vue.use(Element)
   export default {
     name: 'app',
-    components: {Tree, Hello},
+    components: {Tree, Hello,Inputel,Buttonel},
   }
 </script>
 <style>
